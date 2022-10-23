@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the json-schema.org/blog package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: json-schema.org/blog VERSION\n"
+"POT-Creation-Date: 2022-10-23 23:42+0900\n"
+"PO-Revision-Date: 2022-10-24 00:44+0900\n"
+"Last-Translator: gemmaro <gemmaro.dev@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: YAML Front Matter: title
+#: pages/posts/future-of-json-schema.md:1
+#, no-wrap
+msgid "Towards a stable JSON Schema"
+msgstr "安定したJSON Schemaに向けて"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:21
+msgid ""
+"About this time last year, I hosted a discussion at the API Specification "
+"Conference about the future of JSON Schema. The most popular topic of "
+"discussion was, when JSON Schema is going to be \"done\". Of course we've "
+"heard that question a lot. The question stems from the \"draft\" label we "
+"put on your releases. The term \"draft\" has led to quite a bit of confusion "
+"for our community over the years, so let's take a moment to understand where "
+"it comes from."
+msgstr ""
+"昨年の今頃、API Specification Conferenceで、JSON Schemaの将来について\n"
+"の意見交換を主催したことがあります。その際、最も多かった話題は、JSON\n"
+"Schemaはいつ「完成する」のか、というものでした。もちろん、この質問は何\n"
+"度も聞いたことがあります。この疑問は、私たちがリリースに付けている「ド\n"
+"ラフト」というラベルに起因しています。この「ドラフト」という言葉は、長\n"
+"年にわたって私たちのコミュニティをかなり混乱させる原因となってきました。"
+
+#. type: Title ##
+#: pages/posts/future-of-json-schema.md:22
+#, no-wrap
+msgid "Why is it a \"draft\"?"
+msgstr "なぜ「ドラフト」なのですか"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:30
+msgid ""
+"JSON Schema has been loosely following the IETF standards track RFC "
+"process.  That means our releases are in the form of an Internet Draft (I-"
+"D). That's why we refer to them as drafts. However, because of JSON Schema's "
+"wide use in production systems, it's not really possible to treat the spec "
+"like a typical I-D. Therefore, our use of the term \"draft\" is a bit of "
+"legacy artifact from when the IETF process made more sense for JSON Schema."
+msgstr ""
+"JSON SchemaはIETFのstandards track RFCの手続きに緩やかに従っています。\n"
+"つまりリリースはインターネットドラフト（I-D）の形式をとっています。そ\n"
+"れがドラフトと呼んでいる理由です。しかしJSON Schemaは実運用システムで\n"
+"広く使われているため、この仕様を通常のI-Dと同様に扱うことはできません。\n"
+"したがって「ドラフト」という言葉を使うのは、IETFの手続きがJSON Schema\n"
+"にとってより理に適っていた頃のちょっとしたレガシーな遺物のようなものな\n"
+"のです。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:37
+msgid ""
+"This is has been a problem because when people hear \"draft\", they hear "
+"\"unfinished\" or \"not production ready\". That's not the way we treat our "
+"releases. Every release is expected and encouraged to be used in "
+"production.  It's no different than OpenAPI releasing a new version. No one "
+"asks when OpenAPI is going to be \"done\". JSON Schema is just perceived "
+"differently because we call our releases \"drafts\"."
+msgstr ""
+"このことは問題になっていました。というのも「ドラフト」と聞くと「未完成」\n"
+"とか「実運用向けの準備ができていない」という印象を持たれるからです。こ\n"
+"れは実際のリリースの扱い方とは異なります。全てのリリースは実運用環境で\n"
+"使用されることを期待し推奨しています。 OpenAPIが新版をリリースするのと\n"
+"何ら変わりはありません。OpenAPIがいつ「完成」するかなんて誰も聞きませ\n"
+"ん。JSON Schemaはリリースを「ドラフト」と呼んでいるがために、異なるも\n"
+"のとして認識されているだけなのです。"
+
+#. type: Title ##
+#: pages/posts/future-of-json-schema.md:38
+#, no-wrap
+msgid "The real problem"
+msgstr "実際の問題"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:46
+msgid ""
+"But this isn't just a branding problem. When people ask when JSON Schema is "
+"going to be out of \"draft\", what they really mean is, when is JSON Schema "
+"going to be \"stable\". They want to be able to write a schema and be sure "
+"that it will continue to work the same way no matter how JSON Schema evolves "
+"in the future.  They want to be able to update their dependencies and not "
+"have to update their schemas that were working just fine."
+msgstr ""
+"しかしこれは単なる宣伝上の問題ではありません。JSON Schemaがいつ「ドラ\n"
+"フト」から脱却するかと尋ねられるとき、その人が本当に言いたいことはJSON\n"
+"Schemaがいつ「安定」するかということです。スキーマを書き、それが将来\n"
+"JSON Schemaがどのように進化しても同じように機能し続けることを確認した\n"
+"いのです。依存関係を更新しても正常に動作していたスキーマを更新する必要\n"
+"がないようにしたいのです。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:54
+msgid ""
+"This effects library maintainers as well. Needing to support multiple "
+"versions of JSON Schema with no backward or forward compatibility guarantees "
+"gets cumbersome and has led many maintainers to [drop support](https://"
+"github.com/gregsdennis/json-everything/issues/310) for older releases. When "
+"this happens, it can leave users with a choice to have to update all of "
+"their existing schemas that weren't broken or pin to a no-longer-supported "
+"version of the JSON Schema library they are using."
+msgstr ""
+"このことはライブラリの管理者にも影響します。後方互換性や前方互換性が保\n"
+"証されていない複数の版のJSON Schemaに対応する必要があるのは面倒なので、\n"
+"多くの管理者は古いリリースに対して[対応を打ち切\n"
+"る](https://github.com/gregsdennis/json-everything/issues/310)ようにな\n"
+"りました。このようなことが起こると、利用者は壊れていない既存のスキーマ\n"
+"をすべて更新するか、使用しているJSON Schemaライブラリのサポートが終了\n"
+"した版に固定するかという選択を迫られることになります。"
+
+#. type: Title ##
+#: pages/posts/future-of-json-schema.md:55
+#, no-wrap
+msgid "Our solution"
+msgstr "解決策"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:66
+msgid ""
+"Those are the problems we're aiming to solve in the next release. Instead of "
+"continuing to release a new immutable and incompatible version of JSON "
+"Schema with each release, our next release will be a long-lived version that "
+"is stable, but evolving. In this case, \"stable\" means that there will be "
+"strict backward and forward compatibility requirements that must be followed "
+"for any change. It will be much like JavaScript in that as it evolves you "
+"can always be sure that your existing schemas will continue to work with any "
+"JSON Schema library you're using, but you take a risk using newer features "
+"because not all libraries will have implemented those features yet."
+msgstr ""
+"これらの問題を次のリリースで解決することを目指しています。JSON Schema\n"
+"をリリースするたびに不変で互換性のない新しい版をリリースし続けるのでは\n"
+"なく、次のリリースでは進化しつつも安定した長寿命な版をリリースする予定\n"
+"です。この場合の「安定」とは、いかなる変更についても、従わなければなら\n"
+"ない厳格な後方および前方互換性要件が存在することを意味します。\n"
+"JavaScriptの進化と同じで、既存のスキーマはどのJSON Schemaライブラリで\n"
+"も動作することが保証されますが、新しい機能はすべてのライブラリで実装さ\n"
+"れているわけではないので、新しい機能を使う際は危険性が伴います。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:74
+msgid ""
+"That vision of a stable yet continuously evolving spec doesn't fit well with "
+"the IETF process. There are paths we considered, but nothing was proposed "
+"that we thought would allow us to continue to evolve the standard and get "
+"out of \"draft\" any time soon. Therefore, the first step to achieving our "
+"vision is to [decouple our main spec development from the IETF process]"
+"(https://github.com/json-schema-org/json-schema-spec/pull/1277).  This split "
+"allows us to pursue a new model for the main spec development that is more "
+"conducive to our vision."
+msgstr ""
+"安定しつつも継続的に進化する仕様という構想はIETFの手続きにはうまく当て\n"
+"はまりません。検討した道筋もありますが、私たちが規格を進化させ続け、す\n"
+"ぐにでも「ドラフト」から抜け出せると思うものは提案されませんでした。し\n"
+"たがって私たちの構想を実現するための最初の一歩は[私たちの主要な仕様開\n"
+"発をIETFの手続きから切り離\n"
+"す](https://github.com/json-schema-org/json-schema-spec/pull/1277)こと\n"
+"です。この分離により、私たちの構想により資するような、主軸となる仕様開\n"
+"発の新しいモデルを追求することができるようになりました。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:89
+msgid ""
+"Whether or not you're a fan of the direction the JavaScript language has "
+"evolved, it seems clear that they've come up with an [effective process]"
+"(https://2ality.com/2015/11/tc39-process.html) for allowing for continuous "
+"evolution without sacrificing interoperability and longevity.  That's why "
+"we've chosen to base our new process on the process that is used to evolve "
+"the JavaScript language. In our next release, most of the keywords and "
+"features you use today will be declared stable and they will never change in "
+"a backward incompatible way again. Features and keywords we aren't "
+"comfortable making stable yet will become part of a new staged release "
+"process that we are working on defining now. The goal of the staged release "
+"process is to ensure that the feature gets sufficient implementation, "
+"testing, and real world vetting for us to be confident in declaring it "
+"stable. The process should not only make us more confident, but also allow "
+"us to achieve that confidence much more quickly."
+msgstr ""
+"JavaScript言語の進化の方向性の支持者であるかどうかは措くとして、言語関\n"
+"係者が相互運用性と長寿命性を犠牲にすることなく継続的な進化を可能にする\n"
+"[効果的な手続き](https://2ality.com/2015/11/tc39-process.html)を考え出\n"
+"したのは明らかだと思われます。そのため新しい手続きをJavaScript言語を進\n"
+"化させるために使われている手続きを基にしたものにすることを選択しました。\n"
+"次のリリースでは現在使っているキーワードや機能のほとんどが安定版として\n"
+"宣言され、それらが後方互換性のない形で変化することは二度とありません。\n"
+"まだ安定版とすることに抵抗がある機能やキーワードは現在定義作業中の新し\n"
+"い段階的リリース手続きの一部となります。段階的リリース手続きの目的は、\n"
+"その機能が十分な実装・試験・実世界での検証を経て、自信を持って安定版と\n"
+"宣言できるようにすることです。この手続きはより自信を持てるようにするだ\n"
+"けでなく、自信を持って物事をより早く達成することも可能にするはずです。"
+
+#. type: Title ##
+#: pages/posts/future-of-json-schema.md:90
+#, no-wrap
+msgid "Standards considerations"
+msgstr "標準の考慮点"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:94
+msgid ""
+"Starting with the next release, the JSON Schema specification will be self-"
+"published on our website."
+msgstr ""
+"次回のリリースからJSON Schemaの仕様書をWebサイトで自前で公開する予定です。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:103
+msgid ""
+"One of the concerns about self-publishing is about other standards being "
+"able to reference the JSON Schema specification. We have received [feedback]"
+"(https://github.com/json-schema-org/json-schema-spec/"
+"pull/1277#issuecomment-1228734352)  from people involved in standards "
+"development that our approach would be acceptable for them to reference our "
+"specification in their standards based on our membership with the OpenJS "
+"Foundation. We don't know if _all_ standards bodies will come to the same "
+"conclusion, but this feedback gives us confidence that it isn't going to be "
+"a significant problem."
+msgstr ""
+"自前で公開する場合の懸念点として、他の標準がJSON Schema仕様を参照でき\n"
+"るかどうかということが挙げられます。OpenJS Foundationの会員であること\n"
+"を根拠に、この手法を他の標準の中で参照することが許容されるだろうという\n"
+"[フィードバッ\n"
+"ク\n"
+"](https://github.com/json-schema-org/json-schema-spec/"
+"pull/1277#issuecomment-1228734352)\n"
+"を標準開発に携わる人々から受け取りました。_すべて_の標準化団体が同じ結\n"
+"論に達するかどうかはわかりませんが、このフィードバックは大きな問題にな\n"
+"ることはないという確信を与えてくれました。"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:109
+msgid ""
+"Although the main specification will be self published, we are continuing to "
+"work through the IETF process where it makes sense. For example, we are in "
+"the process of registering our media types such as `application/schema+json` "
+"through the HTTPAPIs WG. We are also looking into standardizing reusable "
+"components such as Relative JSON Pointer through IETF."
+msgstr ""
+"主な仕様は自前で公開されますが、理に適っているところではIETFの手続きで\n"
+"作業を続けています。例えばHTTPAPIs WGを通じて\n"
+"`application/schema+json`のようなメディア型を登録する手続きを行ってい\n"
+"るところです。またRelative JSON Pointerのような再利用可能な構成要素を\n"
+"IETFを通じて標準化することも検討しています。"
+
+#. type: Title ##
+#: pages/posts/future-of-json-schema.md:110
+#, no-wrap
+msgid "The bottom line"
+msgstr "結びに"
+
+#. type: Plain text
+#: pages/posts/future-of-json-schema.md:114
+msgid ""
+"Details about the new process will be shared in a separate post when they "
+"are finalized, but here are some outcomes users can expect."
+msgstr ""
+"新しい手続きの詳細については決まり次第別の記事でお伝えしますが、利用者\n"
+"が期待できる成果は以下の通りです。"
+
+#. type: Bullet: '* '
+#: pages/posts/future-of-json-schema.md:130
+msgid ""
+"If you use only stable features, you are guaranteed interoperability between "
+"JSON Schema libraries and you will never need to update your schemas just "
+"for the sake of keeping up with new releases."
+msgstr ""
+"安定した機能のみを使用すればJSONスキーマライブラリ間の相互運用性が保証\n"
+"され、新しいリリースに追従するためにスキーマを更新する必要はありません。"
+
+#. type: Bullet: '* '
+#: pages/posts/future-of-json-schema.md:130
+msgid ""
+"You can safely use new features before they are stable, as long as the "
+"libraries consuming your schemas support the feature."
+msgstr ""
+"スキーマを読み込むライブラリがその機能をサポートしている限り、安定する\n"
+"前の新機能を安全に使用することができます。"
+
+#. type: Bullet: '* '
+#: pages/posts/future-of-json-schema.md:130
+msgid ""
+"Compatibility/Interoperability guarantees will only apply to the next "
+"release and beyond. You will need to update your schemas to the stable "
+"version, but you won't have to continue to update them as JSON Schema "
+"evolves."
+msgstr ""
+"互換性・相互運用性の保証は、次のリリース以降にのみ適用されます。スキー\n"
+"マを安定版に更新する必要はありますが、JSON Schemaが進化しても更新し続\n"
+"ける必要はありません。"
+
+#. type: Bullet: '* '
+#: pages/posts/future-of-json-schema.md:130
+msgid ""
+"Custom dialects and vocabularies will continue to be central concepts for "
+"customizing and extending JSON Schema."
+msgstr ""
+"独自の方言や語彙はJSON Schemaの独自化や拡張のための中心的な概念であり\n"
+"続けるでしょう。"
+
+#. type: Bullet: '* '
+#: pages/posts/future-of-json-schema.md:130
+msgid ""
+"Implementations only need to support the latest stable release. For example, "
+"a library that supports the 2025 release will automatically support the 2023 "
+"and 2024 releases. The older releases will no longer need to be maintained "
+"as distinct versions. However, implementations that continue to support the "
+"\"draft\" releases would still need to maintain those as distinct versions "
+"from the current stable release."
+msgstr ""
+"実装は最新の安定版リリースに対応するだけで構いません。例えば2025年リリー\n"
+"スに対応したライブラリは自動的に2023年、2024年リリースにも対応したこと\n"
+"になります。古いリリースはもはや個別版として保守する必要はありません。\n"
+"しかし「ドラフト」リリースに対応し続ける実装は現在の安定版リリースとは\n"
+"異なる版としてそれらを維持する必要があります。"
